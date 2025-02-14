@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MYPORTFOLIO</title>
+    <title>Document</title>
     <style>
        body {
     background-color: black;
@@ -110,6 +110,7 @@ section {
     font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
     text-shadow: 2px 3px 2px black;
+    cursor: pointer;
 }
 .navitems a{
     display: inline-block;
@@ -180,9 +181,251 @@ section {
     color: rgb(238, 238, 237);
     text-shadow: 1px 1px 3px black;
 }
+/* Skills Section */
+#skills {
+    background-color: #000; /* Black Background */
+    padding: 50px 20px;
+    text-align: center;
+    color: #fff; /* White Text */
+}
+
+.skill-category {
+    margin-bottom: 40px;
+}
+
+.skill-category h3 {
+    color: #ffcc00; /* Yellow Heading */
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* Skill Container: Arranges skills horizontally */
+.skill-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Skill Box Styling */
+.skill-box {
+    background: #111; /* Dark Card Background */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    width: 150px; /* Medium Size */
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hover Effect */
+.skill-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+/* Text Styling */
+.skill-box p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff; /* White Text */
+}
+
+/* Skill Icons */
+.skill-box img {
+    width: 80px; /* Medium Size */
+    height: 80px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Glow Effect */
+}
+#myskill{
+    color: bisque;
+    font-size: 30px;
+}
+
+@media all and (max-width:700px) {
+
+     body {
+    background-color: black;
+    background-attachment: scroll;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: bisque;
+    text-shadow: 2px 3px 2px black;
+}
+
+#home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 
 
-        
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#hey, #name {
+    opacity: 0;
+    animation: moveText 2s ease-out forwards;
+}
+
+#hey {
+    transform: translateX(-100%);
+    animation-delay: 0s;
+}
+#name {
+    transform: translateX(100%);
+    animation-delay: 0s;
+}
+
+@keyframes moveText {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#hey {
+    font-size: 20px;
+    color:bisque;
+}
+
+#name {
+    font-size: 20px;
+    color: crimson;
+}
+#nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    font-family: 'Lucida Sans', sans-serif;
+    color: bisque;
+    background-color: black;
+    padding: 5px 0;
+    z-index: 1000;
+}
+
+.navitems {
+    word-spacing: 12px;
+    color: bisque;
+    font-size: 11px;
+}
+
+#port {
+    color: bisque;
+    font-size: 33px;
+    text-shadow: 3px 4px 3px rgb(4, 4, 4);
+    font-family: 'Courier New', Courier, monospace;
+    border-bottom: 3px dotted crimson;
+    text-shadow: 2px 3px 2px black;
+}
+.navitems a{
+    display: inline-block;
+    cursor: pointer; /* 🔥 Makes the cursor a pointer */
+    transition: color 0.3s ease-in-out; /* Smooth color change effect */
+}
+.navitems a:hover {
+    color: rgb(240, 9, 9); 
+    text-decoration:overline;
+}
+#main {
+    display: flex;
+    flex-direction: column; /* Places text in a column (one below the other) */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 20px;
+    font-weight: bold;
+    color: bisque;
+    position: relative;
+    text-align: center;
+}
+
+#text-container {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+#intro {
+    font-size: 10px;
+    color: bisque;
+    text-align: center;
+    margin-top: 40px; /* Adds space below your name */
+    max-width: 60%;
+    line-height: 1.5;
+}
+#about {
+    background-color: black; 
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.aboutme {
+    max-width: 70%;
+    margin: auto;
+    background-color: #3d1f1f;
+    height:96vh;
+    width:100%;
+}
+
+#about h2 {
+    font-size: 10px;
+    color: aqua;
+    text-shadow: 2px 2px 5px rgb(243, 241, 241);
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 10px;
+    line-height: 1.6;
+    color: rgb(238, 238, 237);
+    text-shadow: 1px 1px 3px black;
+}
+
+
+}      
     </style>
 </head>                                               
 <body>
@@ -191,8 +434,8 @@ section {
         <div class="navitems">
             <a href="#home">HOME</a>
             <a href="#about">ABOUT</a>
-            <a href="#skill">SKILLS</a>
-            <a href="#project">PROJECTS</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#projects">PROJECTS</a>
             <a href="#contact">CONTACT-US</a>
         </div>
     </div>
@@ -207,24 +450,73 @@ section {
     <!-- ABOUT SECTION -->
     <section id="about" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: black; color: white; text-align: center;">
         <div>
-            <h2 style="font-size: 40px; color: aqua; text-shadow: 2px 2px 5px black;">About Me</h2>
-            <p style="font-size: 20px; line-height: 1.6; color: bisque; text-shadow: 1px 1px 3px black; max-width: 70%; margin: auto;">
+            <h2 style="font-size: 25px; color: aqua; text-shadow: 2px 2px 5px black;">About Me</h2>
+            <p style="font-size: 15px; line-height: 1.6; color: bisque; text-shadow: 1px 1px 3px black; max-width: 90%;margin:auto;">
                 I'm a Front-End Developer with a passion for crafting interactive and engaging digital experiences.
                 Currently pursuing a diploma in Computer Engineering, I love creating visually appealing, 
                 user-friendly websites that enhance the web experience.
             </p>
-            <p style="font-size: 20px; line-height: 1.6; color: bisque; text-shadow: 1px 1px 3px black; max-width: 70%; margin: auto;">
+            <p style="font-size: 15px; line-height: 1.6; color: bisque; text-shadow: 1px 1px 3px black; max-width: 70%; margin: auto;">
                 My expertise includes HTML, CSS, JavaScript, and modern frameworks, and I continuously explore 
                 new technologies to stay ahead in web development.
             </p>
         </div>
     </section>
     
-<section id="skill">
-<p id="skill">
+    <section id="skills">
+        <h2 id="myskill">My Skills</h2>
     
-</p>
-</section>
+        <!-- Web Technologies -->
+        <div class="skill-category">
+            <h3>Web Technologies</h3>
+            <div class="skill-container">
+                <div class="skill-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML">
+                    <p>HTML</p>
+                </div>
+                <div class="skill-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS">
+                    <p>CSS</p>
+                </div>
+                <div class="skill-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript">
+                    <p>JavaScript</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Programming Languages -->
+        <div class="skill-category">
+            <h3>Programming Languages</h3>
+            <div class="skill-container">
+                <div class="skill-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/919/919841.png" alt="C">
+                    <p>C</p>
+                </div>
+                <div class="skill-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" alt="Java">
+                    <p>Java (60%)</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Design Skills -->
+        <div class="skill-category">
+            <h3>Design Skills</h3>
+            <div class="skill-container">
+                <div class="skill-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" alt="Photoshop">
+                    <p>Photoshop</p>
+                </div>
+                <div class="skill-box">
+                    <img src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png" alt="Web Design">
+
+                <p>Web Design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
 <section id="projects">
 <p id="projects">
    
@@ -237,5 +529,10 @@ section {
         </p>
 
 </section>
+<script>
+    window.onload = function () {
+        window.scrollTo(0, 0); // Scrolls to the top when the page refreshes
+    };
+</script>
 </body>
 </html>
