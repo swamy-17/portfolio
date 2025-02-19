@@ -53,7 +53,7 @@ section {
     animation: moveText 2s ease-out forwards;
 }
 
-#hey {
+ #hey{
     transform: translateX(-100%);
     animation-delay: 0s;
 }
@@ -109,13 +109,14 @@ section {
     text-shadow: 3px 4px 3px rgb(4, 4, 4);
     font-family: 'Courier New', Courier, monospace;
     text-decoration: none;
+    border-bottom: 3px dotted crimson;
     text-shadow: 2px 3px 2px black;
     cursor: pointer;
 }
 .navitems a{
     display: inline-block;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
+    cursor: pointer; /* 🔥 Makes the cursor a pointer */
+    transition: color 0.3s ease-in-out; /* Smooth color change effect */
 }
 .navitems a:hover {
     color: rgb(240, 9, 9); 
@@ -123,7 +124,7 @@ section {
 }
 #main {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column; /* Places text in a column (one below the other) */
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -143,50 +144,56 @@ section {
     font-size: 20px;
     color: bisque;
     text-align: center;
-    margin-top: 40px; 
+    margin-top: 40px; /* Adds space below your name */
     max-width: 60%;
     line-height: 1.5;
 }
-#about {
-    background-color: black; 
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+.about-container {
+            max-width: 800px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
 
+        .about-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #007bff;
+        }
 
-.aboutme {
-    max-width: 70%;
-    margin: auto;
-    background-color: #3d1f1f;
-    height:96vh;
-    width:100%;
-}
+        .about-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-#about h2 {
-    font-size: 40px;
-    color: aqua;
-    text-shadow: 2px 2px 5px black;
-    margin-bottom: 20px;
-}
+        .about-text {
+            flex: 1;
+        }
 
-#about p {
-    font-size: 20px;
-    line-height: 1.6;
-    color: rgb(238, 238, 237);
-    text-shadow: 1px 1px 3px black;
-}
-/* Skills Section */
+        .about-text h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .about-text p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
 #skills {
-    background-color: black;
+    background-color: #000; 
     padding: 50px 20px;
     text-align: center;
-    color: white;
+    color: #fff;
 }
 
 .skill-category {
@@ -208,42 +215,152 @@ section {
     flex-wrap: wrap;
 }
 
-/* Skill Box Styling */
 .skill-box {
-    background: #111; 
+    background: #111;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     text-align: center;
-    width: 150px; /* Medium Size */
+    width: 150px; 
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Hover Effect */
 .skill-box:hover {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
-/* Text Styling */
 .skill-box p {
     font-size: 16px;
     font-weight: bold;
-    color: #fff;
+    color: #fff; 
 }
-
 
 .skill-box img {
     width: 80px; 
     height: 80px;
     margin-bottom: 10px;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Glow Effect */
 }
 #myskill{
     color: bisque;
     font-size: 30px;
 }
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 29px;
+    padding: 50px 20px;
+    text-align: center;
+}
+#projects h2{
+    font-size: 35px;;
+    text-align: center;
+    color:white;
+}
+
+.projectmain {
+    background: #fff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 320px; 
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.projectmain:hover {
+    transform: translateY(-13px);
+}
+
+
+.project-text h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.project-text p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.project-text .btn {
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 10px 15px;
+    text-decoration: none;
+    background: #007bff;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.project-text .btn:hover {
+    background: #0056b3;
+}
+
+#contact {
+    text-align: center;
+    padding: 50px 20px;
+    background: #181717;
+    color:white;
+}
+
+.contact-container {
+    max-width: 500px;
+    margin: auto;
+    background: rgb(46, 40, 40);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.input-group textarea {
+    resize: none;
+    height: 120px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    background: #0056b3;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+   
+    background: #007bff;
+}
+
+
 
 @media all and (max-width:700px) {
 
@@ -446,26 +563,28 @@ section {
         </div>
     </section>
     
-    <!-- ABOUT SECTION -->
     <section id="about" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: black; color: white; text-align: center;">
-        <div>
+        <div class="about-container">
+            <div class="about-text">
             <h2 style="font-size: 25px; color: aqua; text-shadow: 2px 2px 5px black;">About Me</h2>
             <p style="font-size: 15px; line-height: 1.6; color: bisque; text-shadow: 1px 1px 3px black; max-width: 90%;margin:auto;">
+                I'm Golakoti Swamy Naidu, a passionate  Web Developer with a strong foundation in programming and web technologies.  
+                Currently pursuing a Diploma in Computer Engineering, I am eager to build innovative and user-friendly applications.
                 I'm a Front-End Developer with a passion for crafting interactive and engaging digital experiences.
                 Currently pursuing a diploma in Computer Engineering, I love creating visually appealing, 
                 user-friendly websites that enhance the web experience.
             </p>
             <p style="font-size: 15px; line-height: 1.6; color: bisque; text-shadow: 1px 1px 3px black; max-width: 70%; margin: auto;">
-                My expertise includes HTML, CSS, JavaScript, and modern frameworks, and I continuously explore 
-                new technologies to stay ahead in web development.
+                My expertise includes HTML, CSS, JavaScript, and showcasing my skills in technology and I continuously explore 
+                new technologies to stay ahead in web development. My goal is to create efficient and scalable web solutions.
             </p>
+        </div>
         </div>
     </section>
     
     <section id="skills">
         <h2 id="myskill">My Skills</h2>
-    
-        <!-- Web Technologies -->
+
         <div class="skill-category">
             <h3>Web Technologies</h3>
             <div class="skill-container">
@@ -483,8 +602,7 @@ section {
                 </div>
             </div>
         </div>
-    
-        <!-- Programming Languages -->
+
         <div class="skill-category">
             <h3>Programming Languages</h3>
             <div class="skill-container">
@@ -499,7 +617,6 @@ section {
             </div>
         </div>
     
-        <!-- Design Skills -->
         <div class="skill-category">
             <h3>Design Skills</h3>
             <div class="skill-container">
@@ -516,17 +633,59 @@ section {
         </div>
     </section>
     
-<section id="projects">
-<p id="projects">
-   
-
-    </p>
-</section>
-<section id="contact">
-    <p id="contact">
+    <section id="projects">
+        <h2>My Projects</h2>
         
-        </p>
-
+        <!-- Calculator Project -->
+        <div class="projectmain">
+            <div class="project-text">
+                <h3>Smart Calculator</h3>
+                <p>A modern and responsive calculator with a clean UI and smooth animations.</p>
+                <a href="D:\html\calculator.html" target="_blank" class="btn">Live Demo</a>
+                <a href="https://github.com/yourusername/calculator" target="_blank" class="btn">GitHub Code</a>
+            </div>
+        </div>
+    
+        <!-- Login & Signup Project -->
+        <div class="projectmain">
+            <div class="project-text">
+                <h3>Login & Signup System</h3>
+                <p>A stylish and secure login & signup page with form validation and animations.</p>
+                <a href="D:\html\index.html" target="_blank" class="btn">Live Demo</a>
+                <a href="https://github.com/yourusername/login-signup" target="_blank" class="btn">GitHub Code</a>
+            </div>
+        </div>
+    
+    </section>
+    
+    
+<section id="contact">
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Have a project in mind? Let's connect!</p>
+    
+        <div class="contact-container">
+            <form id="contact-form">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+    
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+    
+                <div class="input-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Type your message" required></textarea>
+                </div>
+    
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+    
 </section>
 <script>
     window.onload = function () {
