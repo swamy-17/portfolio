@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+    <style>
+         body{
+            margin:0;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            background-color:aliceblue;
+        }
+        .button {
+            border: 0;
+            border-radius: 40px;
+            color: white;
+            background-color: rgb(32, 34, 35);
+            cursor: pointer;
+            width: 93px;
+            height: 57px;
+            user-select: none;
+            font-size: 35px;
+        }
+        #line{
+            grid-column: span 4;
+            text-align: right;
+            font-size: 50px;
+        }
+        #full {
+            display:grid;
+            grid-template-columns: repeat(4,auto);
+            gap: 19px;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border-radius: 9px;
+            padding: 20px;
+            padding-top: 10px;
+            height:535px;
+            width:500px;
+            box-shadow: 0 0 15px rgba(11, 11, 11, 0.5);
+        }
+        #buttonop{
+            background-color: aquamarine;
+            font-size: 36px;
+            color: black;
+        }
+        #buttonequal{
+            background-color: rgb(255, 228, 195);
+            font-size: 36px;
+            color:grey;
+        }
+        
+        @media all and (max-width:700px){
+            body{
+            margin:0;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height:100vh;
+            background-color: aliceblue;
+            }
+        .button {
+            border: 0;
+            border-radius: 40px;
+            color: white;
+            background-color: rgb(32, 34, 35);
+            cursor: pointer;
+            width: 65px;
+            height: 45px;
+            user-select: none;
+            font-size: 23px;
+        }
+        #line{
+            grid-column: span 4;
+            text-align: right;
+            font-size: 30px;
+        }
+        #full {
+            display:grid;
+            grid-template-columns: repeat(4,auto);
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            background-color:white;
+            border-radius: 9px;
+            padding: 17px;
+            padding-top: 10px;
+            height:415px;
+            width:350px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        #buttonop{
+            background-color: aquamarine;
+            font-size: 23px;
+            color: black;
+        }
+        #buttonequal{
+            background-color: rgb(255, 228, 195);
+            font-size: 23px;
+            color:grey;
+        }
+        }
+    </style>
+</head>
+<script>
+    let x='';
+    function operator(a){
+        x+=a;
+        document.getElementById("line").innerText=x;
+    } 
+    function result(){
+        try{
+        let expression = x.replace(/\^/g, '**').replace(/×/g, '*');
+        let ev = new Function('return ' + expression)();
+        if(isNaN(ev) || !isFinite(ev)) {
+           throw new Error("INVALID");
+        }
+    
+      document.getElementById("line").innerText=ev;
+      x=ev;
+    }
+      catch(Error){
+        document.getElementById("line").innerText="INVALID";
+        x='';
+      }
+    }
+    function back(){
+         x='';
+         document.getElementById("line").innerText="|";
+    }
+    function undo(){
+        x=x.slice(0,-1);
+        document.getElementById("line").innerText=x || "|";
+    }
+</script>
+<body>
+    
+    <div id="full">
+        <p id="line">|</p>
+        <button class="button" id="buttonop"  onclick="back()">AC</button>
+        <button class="button" id="buttonop"  onclick="operator('^')">^</button>
+        <button class="button" id="buttonop"  onclick="operator('%')" >%</button>
+        <button class="button" id="buttonop" onclick="undo()">⌫</button>
+        <button class="button" onclick="operator('1')">1</button>
+        <button class="button" onclick="operator('2')">2</button>
+        <button class="button" onclick="operator('3')">3</button>
+        <button id="buttonop" class="button" onclick="operator('/')">÷</button>
+        <button class="button" onclick="operator('4')">4</button>
+        <button class="button" onclick="operator('5')">5</button> 
+       <button class="button" onclick="operator('6')">6</button>
+        <button id="buttonop" class="button" onclick="operator('×')">×</button>
+        <button class="button" onclick="operator('7')">7</button>
+        <button class="button" onclick="operator('8')">8</button>
+        <button class="button" onclick="operator('9')">9</button>
+        <button id="buttonop" class="button" onclick="operator('-')">-</button>
+        <button class="button" onclick="operator('.')">.</button>
+        <button class="button" onclick="operator('0')">0</button>
+        <button id="buttonequal" class="button"  onclick="result()">=</button>
+        <button id="buttonop" class="button" onclick="operator('+')">+</button>
+    </div>
+</body>
+</html>

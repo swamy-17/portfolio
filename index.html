@@ -3,694 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-       body {
-    background-color: black;
-    background-attachment: scroll;
+        body {
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
     margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-}
-
-a {
-    text-decoration: none;
-    color: bisque;
-    text-shadow: 2px 3px 2px black;
-}
-
-#home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100vh;
-    text-align: center;
-}
-
-html, body {
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-
-
-* {
-    box-sizing: border-box;
-    max-width: 100%;
-}
-section {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#hey, #name {
-    opacity: 0;
-    animation: moveText 2s ease-out forwards;
-}
-
- #hey{
-    transform: translateX(-100%);
-    animation-delay: 0s;
-}
-#name {
-    transform: translateX(100%);
-    animation-delay: 0s;
-}
-
-@keyframes moveText {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-#hey {
-    font-size: 45px;
-    color:bisque;
-}
-
-#name {
-    font-size: 45px;
-    color: crimson;
-}
-#nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    justify-content: space-around;
-    display: flex;
-    align-items: center;
-    font-size: 30px;
-    font-family: 'Lucida Sans', sans-serif;
-    color: bisque;
-    background-color: black;
-    padding: 10px 0;
-    z-index: 1000;
-}
-
-.navitems {
-    word-spacing: 40px;
-    color: bisque;
-    font-size: 15px;
-}
-
-#port {
-    color: bisque;
-    font-size: 45px;
-    text-shadow: 3px 4px 3px rgb(4, 4, 4);
-    font-family: 'Courier New', Courier, monospace;
-    text-decoration: none;
-    border-bottom: 3px dotted crimson;
-    text-shadow: 2px 3px 2px black;
-    cursor: pointer;
-}
-.navitems a{
-    display: inline-block;
-    cursor: pointer; /* 🔥 Makes the cursor a pointer */
-    transition: color 0.3s ease-in-out; /* Smooth color change effect */
-}
-.navitems a:hover {
-    color: rgb(240, 9, 9); 
-    text-decoration:overline;
-}
-#main {
-    display: flex;
-    flex-direction: column; /* Places text in a column (one below the other) */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 50px;
-    font-weight: bold;
-    color: bisque;
-    position: relative;
-    text-align: center;
-}
-
-#text-container {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-#intro {
-    font-size: 20px;
-    color: bisque;
-    text-align: center;
-    margin-top: 40px; /* Adds space below your name */
-    max-width: 60%;
-    line-height: 1.5;
-}
-.about-container {
-            max-width: 800px;
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .about-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 4px solid #007bff;
-        }
-
-        .about-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h2 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .about-text p {
-            font-size: 16px;
-            color: #555;
-            line-height: 1.6;
-        }
-
-#skills {
-    background-color: #000; 
-    padding: 50px 20px;
-    text-align: center;
-    color: #fff;
-}
-
-.skill-category {
-    margin-bottom: 40px;
-}
-
-.skill-category h3 {
-    color: #ffcc00; 
-    font-size: 26px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-
-.skill-container {
     display: flex;
     justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+    align-items: center;
 }
 
-.skill-box {
-    background: #111;
-    padding: 15px;
+#form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    padding: 50px;
+}
+
+fieldset {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 320px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    text-align: center;
-    width: 150px; 
-    transition: transform 0.3s, box-shadow 0.3s;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.skill-box:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-.skill-box p {
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff; 
-}
-
-.skill-box img {
-    width: 80px; 
-    height: 80px;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5)); /* Glow Effect */
-}
-#myskill{
-    color: bisque;
-    font-size: 30px;
-}
-
-#projects {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 29px;
-    padding: 50px 20px;
-    text-align: center;
-}
-#projects h2{
-    font-size: 35px;;
-    text-align: center;
-    color:white;
-}
-
-.projectmain {
-    background: #fff;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 320px; 
-    padding: 20px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.projectmain:hover {
-    transform: translateY(-13px);
-}
-
-
-.project-text h3 {
-    font-size: 1.5rem;
-    margin-top: 10px;
-}
-
-.project-text p {
-    font-size: 1rem;
-    color: #555;
-}
-
-.project-text .btn {
-    display: inline-block;
-    margin: 10px 5px;
-    padding: 10px 15px;
-    text-decoration: none;
-    background: #007bff;
-    color: white;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-
-.project-text .btn:hover {
-    background: #0056b3;
-}
-
-#contact {
-    text-align: center;
-    padding: 50px 20px;
-    background: #181717;
-    color:white;
-}
-
-.contact-container {
-    max-width: 500px;
-    margin: auto;
-    background: rgb(46, 40, 40);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.input-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.input-group input, .input-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.input-group textarea {
-    resize: none;
-    height: 120px;
-}
-
-.btn {
-    display: block;
-    width: 100%;
-    background: #0056b3;
-    color: white;
+    padding: 25px;
     border: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: burlywood;
+    font-size: 45px;
+}
+
+label {
+    font-weight: bold;
+    color: #b2a669;
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #b2a669;
+    outline: none;
+    background: none;
     padding: 10px;
-    border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #b2a669;
+    font-size: 14px;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #ee980e, #e55b05, #e45454);
+    color: antiquewhite;
+    font-size: 18px;
+    border: none;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.btn:hover {
-   
-    background: #007bff;
+button:hover {
+    background: linear-gradient(to right, #e45454, #e55b05, #eb8e0c);
 }
 
-
-
-@media all and (max-width:700px) {
-
-     body {
-    background-color: black;
-    background-attachment: scroll;
-    margin: 0;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
-}
-
-a {
+#forget {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    color: cadetblue;
     text-decoration: none;
-    color: bisque;
-    text-shadow: 2px 3px 2px black;
+    font-size: 14px;
 }
 
-#home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+p {
+    color: burlywood;
+    font-size: 17px;
     text-align: center;
+    margin-top: 15px;
 }
 
-html, body {
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-
-
-* {
-    box-sizing: border-box;
-    max-width: 100%;
-}
-section {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-#hey, #name {
-    opacity: 0;
-    animation: moveText 2s ease-out forwards;
-}
-
-#hey {
-    transform: translateX(-100%);
-    animation-delay: 0s;
-}
-#name {
-    transform: translateX(100%);
-    animation-delay: 0s;
-}
-
-@keyframes moveText {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-#hey {
-    font-size: 20px;
-    color:bisque;
-}
-
-#name {
-    font-size: 20px;
-    color: crimson;
-}
-#nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    justify-content: space-around;
-    display: flex;
-    align-items: center;
-    font-size: 10px;
-    font-family: 'Lucida Sans', sans-serif;
-    color: bisque;
-    background-color: black;
-    padding: 5px 0;
-    z-index: 1000;
-}
-
-.navitems {
-    word-spacing: 12px;
-    color: bisque;
-    font-size: 11px;
-}
-
-#port {
-    color: bisque;
-    font-size: 33px;
-    text-shadow: 3px 4px 3px rgb(4, 4, 4);
-    font-family: 'Courier New', Courier, monospace;
-    border-bottom: 3px dotted crimson;
-    text-shadow: 2px 3px 2px black;
-}
-.navitems a{
-    display: inline-block;
-    cursor: pointer; /* 🔥 Makes the cursor a pointer */
-    transition: color 0.3s ease-in-out; /* Smooth color change effect */
-}
-.navitems a:hover {
-    color: rgb(240, 9, 9); 
-    text-decoration:overline;
-}
-#main {
-    display: flex;
-    flex-direction: column; /* Places text in a column (one below the other) */
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 20px;
-    font-weight: bold;
-    color: bisque;
-    position: relative;
-    text-align: center;
-}
-
-#text-container {
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-#intro {
-    font-size: 10px;
-    color: bisque;
-    text-align: center;
-    margin-top: 40px; /* Adds space below your name */
-    max-width: 60%;
-    line-height: 1.5;
-}
-#about {
-    background-color: black; 
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.aboutme {
-    max-width: 70%;
-    margin: auto;
-    background-color: #3d1f1f;
-    height:96vh;
-    width:100%;
-}
-
-#about h2 {
-    font-size: 10px;
-    color: aqua;
-    text-shadow: 2px 2px 5px rgb(243, 241, 241);
-    margin-bottom: 20px;
-}
-
-#about p {
-    font-size: 10px;
-    line-height: 1.6;
-    color: rgb(238, 238, 237);
-    text-shadow: 1px 1px 3px black;
-}
-
-
-}      
     </style>
-</head>                                               
+</head>
 <body>
-    <div id="nav">
-        <a id="port">PORTFOLIO</a>
-        <div class="navitems">
-            <a href="#home">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#skills">SKILLS</a>
-            <a href="#projects">PROJECTS</a>
-            <a href="#contact">CONTACT-US</a>
-        </div>
-    </div>
-    <section id="home">
-        <div id="main">
-<div id="text-container"><span id="hey">-HEY,</span><span id="name">It's Me SWAMY NAIDU</span><br></div>
-        <p id="intro">  A passionate <span style="color:crimson;">Front-End Developer</span> with a love for building 
-            interactive and visually stunning web. I enjoy solving complex problems with clean and <b>efficient</b> code.<br> Let's create something amazing!!!</p>
-        </div>
-    </section>
-    
-    <section id="about" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: black; color: white; text-align: center;">
-        <div class="about-container">
-            <div class="about-text">
-            <h2 style="font-size: 25px; color: aqua; text-shadow: 2px 2px 5px black;">About Me</h2>
-            <p style="font-size: 15px; line-height: 1.6; color: bisque; text-shadow: 1px 1px 3px black; max-width: 90%;margin:auto;">
-                I'm Golakoti Swamy Naidu, a passionate  Web Developer with a strong foundation in programming and web technologies.  
-                Currently pursuing a Diploma in Computer Engineering, I am eager to build innovative and user-friendly applications.
-                I'm a Front-End Developer with a passion for crafting interactive and engaging digital experiences.
-                Currently pursuing a diploma in Computer Engineering, I love creating visually appealing, 
-                user-friendly websites that enhance the web experience.
-            </p>
-            <p style="font-size: 15px; line-height: 1.6; color: bisque; text-shadow: 1px 1px 3px black; max-width: 70%; margin: auto;">
-                My expertise includes HTML, CSS, JavaScript, and showcasing my skills in technology and I continuously explore 
-                new technologies to stay ahead in web development. My goal is to create efficient and scalable web solutions.
-            </p>
-        </div>
-        </div>
-    </section>
-    
-    <section id="skills">
-        <h2 id="myskill">My Skills</h2>
-
-        <div class="skill-category">
-            <h3>Web Technologies</h3>
-            <div class="skill-container">
-                <div class="skill-box">
-                    <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML">
-                    <p>HTML</p>
-                </div>
-                <div class="skill-box">
-                    <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS">
-                    <p>CSS</p>
-                </div>
-                <div class="skill-box">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript">
-                    <p>JavaScript</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="skill-category">
-            <h3>Programming Languages</h3>
-            <div class="skill-container">
-                <div class="skill-box">
-                    <img src="https://cdn-icons-png.flaticon.com/512/919/919841.png" alt="C">
-                    <p>C</p>
-                </div>
-                <div class="skill-box">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" alt="Java">
-                    <p>Java (60%)</p>
-                </div>
-            </div>
-        </div>
-    
-        <div class="skill-category">
-            <h3>Design Skills</h3>
-            <div class="skill-container">
-                <div class="skill-box">
-                    <img src="https://cdn-icons-png.flaticon.com/512/5968/5968520.png" alt="Photoshop">
-                    <p>Photoshop</p>
-                </div>
-                <div class="skill-box">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1698/1698535.png" alt="Web Design">
-
-                <p>Web Design</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="projects">
-        <h2>My Projects</h2>
-        
-        <!-- Calculator Project -->
-        <div class="projectmain">
-            <div class="project-text">
-                <h3>Smart Calculator</h3>
-                <p>A modern and responsive calculator with a clean UI and smooth animations.</p>
-                <a href="D:\html\calculator.html" target="_blank" class="btn">Live Demo</a>
-                <a href="https://github.com/yourusername/calculator" target="_blank" class="btn">GitHub Code</a>
-            </div>
-        </div>
-    
-        <!-- Login & Signup Project -->
-        <div class="projectmain">
-            <div class="project-text">
-                <h3>Login & Signup System</h3>
-                <p>A stylish and secure login & signup page with form validation and animations.</p>
-                <a href="D:\html\index.html" target="_blank" class="btn">Live Demo</a>
-                <a href="https://github.com/yourusername/login-signup" target="_blank" class="btn">GitHub Code</a>
-            </div>
-        </div>
-    
-    </section>
-    
-    
-<section id="contact">
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>Have a project in mind? Let's connect!</p>
-    
-        <div class="contact-container">
-            <form id="contact-form">
-                <div class="input-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
-                </div>
-    
-                <div class="input-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                </div>
-    
-                <div class="input-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" placeholder="Type your message" required></textarea>
-                </div>
-    
-                <button type="submit" class="btn">Send Message</button>
+    <div id="form">                                               
+        <fieldset id="bg">
+            <form>
+                <h1>LOGIN</h1>
+                <label for="username">USERNAME</label>
+                <input type="text" name="username" id="username" placeholder="👤 Type your name">
+                
+                <label for="password">PASSWORD</label>
+                <input type="password" name="password" id="password" placeholder="🔒 Type your password">
+                
+                <a id="forget" href="forget.html">Forgot your password?</a><br><br>
+                
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="sample.html">Sign Up</a></p>
             </form>
-        </div>
-    </section>
-    
-</section>
-<script>
-    window.onload = function () {
-        window.scrollTo(0, 0); // Scrolls to the top when the page refreshes
-    };
-</script>
+        </fieldset>
+    </div>
 </body>
 </html>
