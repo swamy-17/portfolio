@@ -38,6 +38,41 @@ html, body {
     box-sizing: border-box;
     max-width: 100%;
 }
+#img-mine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#img-mine img {
+    width: 250px; /* Adjust size */
+    height: 250px;
+    border-radius: 50%; /* Circular frame */
+    border: 5px solid rgba(255, 255, 255, 0.3); /* Soft border */
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1); /* Soft glow effect */
+    object-fit: cover;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: fadeIn 2s ease-out;
+}
+
+#img-mine img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.3); /* Glow increases */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 section {
     width: 100%;
     min-height: 100vh;
@@ -47,31 +82,98 @@ section {
     align-items: center;
     text-align: center;
 }
-
-#hey, #name {
-    opacity: 0;
-    animation: moveText 2s ease-out forwards;
+/* Main Container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
 }
 
- #hey{
-    transform: translateX(-100%);
-    animation-delay: 0s;
-}
-#name {
-    transform: translateX(100%);
-    animation-delay: 0s;
+/* About Section */
+.about {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
 }
 
-@keyframes moveText {
+/* Name Animation (Existing Style – No Change) */
+#animated-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Image Container */
+#img-mine {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Styling */
+#img-mine img {
+    width: 400px; /* Increased size */
+    height: 400px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.1);
+    object-fit: cover;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    animation: fadeIn 2s ease-out;
+}
+
+/* Hover Effect */
+#img-mine img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.3);
+}
+section p {
+    color: white; /* Or any other visible color */
+    font-size: 25px;
+    text-align:start; /* Adjust for readability */
+}
+
+
+/* Fade-in Animation */
+@keyframes fadeIn {
     0% {
-        opacity: 1;
+        opacity: 0;
+        transform: translateY(-20px);
     }
     100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+
+    #img-mine img {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+#hey {
+    transform: translateX(-100%);
+    animation: moveText 2s ease-out forwards;
+    animation-delay: 0.5s; /* Small delay */
+}
 #hey {
     font-size: 45px;
     color:bisque;
@@ -81,6 +183,32 @@ section {
     font-size: 45px;
     color: crimson;
 }
+#name {
+    transform: translateX(100%);
+    animation: moveText 2s ease-out forwards;
+    animation-delay: 1s; /* Slightly later */
+}
+@keyframes moveText {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes moveText {
+    0% {
+        opacity: 0; /* Start hidden */
+        transform: translateX(-50px); /* Small movement */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
 #nav {
     position: fixed;
     top: 0;
@@ -179,13 +307,14 @@ section {
 
         .about-text h2 {
             font-size: 24px;
-            color: black;
+            color: #333;
             margin-bottom: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
 
         .about-text p {
             font-size: 16px;
-            color: grey;
+            color: #555;
             line-height: 1.6;
         }
 
@@ -250,16 +379,21 @@ section {
 
 #projects {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 29px;
+    flex-direction: column;
+    align-items: center;
     padding: 50px 20px;
     text-align: center;
+    color: white;
 }
-#projects h2{
-    font-size: 35px;;
-    text-align: center;
-    color:white;
+
+.project-container {
+    display: flex;
+    flex-direction: row; /* Ensures horizontal alignment */
+    gap: 30px; /* Adds space between projects */
+    flex-wrap: nowrap; /* Prevents wrapping */
+    overflow-x: auto; /* Adds horizontal scrolling if needed */
+    padding: 20px;
+    max-width: 100%;
 }
 
 .projectmain {
@@ -267,8 +401,9 @@ section {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
-    width: 320px; 
+    width: 320px; /* Fixed width for consistency */
     padding: 20px;
+    flex-shrink: 0; /* Prevents shrinking */
     transition: transform 0.3s ease-in-out;
 }
 
@@ -276,10 +411,10 @@ section {
     transform: translateY(-13px);
 }
 
-
 .project-text h3 {
     font-size: 1.5rem;
     margin-top: 10px;
+    color:black;
 }
 
 .project-text p {
@@ -302,6 +437,7 @@ section {
     background: #0056b3;
 }
 
+
 #contact {
     text-align: center;
     padding: 50px 20px;
@@ -310,12 +446,12 @@ section {
 }
 
 .contact-container {
-    max-width: 500px;
+    width: 600px;
     margin: auto;
     background: rgb(46, 40, 40);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 5px 15px rgba(172, 153, 153, 0.1);
 }
 
 .input-group {
@@ -334,13 +470,17 @@ section {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 15px;
 }
 
 .input-group textarea {
     resize: none;
     height: 120px;
 }
+.input-group #name {
+    font-size: 16px; 
+}
+
 
 .btn {
     display: block;
@@ -505,40 +645,7 @@ section {
     max-width: 60%;
     line-height: 1.5;
 }
-#about {
-    background-color: black; 
-    color: white;
-    text-align: center;
-    padding: 50px 20px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
 
-
-.aboutme {
-    max-width: 70%;
-    margin: auto;
-    background-color: #3d1f1f;
-    height:96vh;
-    width:100%;
-}
-
-#about h2 {
-    font-size: 10px;
-    color: aqua;
-    text-shadow: 2px 2px 5px rgb(243, 241, 241);
-    margin-bottom: 20px;
-}
-
-#about p {
-    font-size: 10px;
-    line-height: 1.6;
-    color: rgb(238, 238, 237);
-    text-shadow: 1px 1px 3px black;
-}
 
 
 }      
@@ -556,25 +663,32 @@ section {
         </div>
     </div>
     <section id="home">
-        <div id="main">
-<div id="text-container"><span id="hey">-HEY,</span><span id="name">It's Me SWAMY NAIDU</span><br></div>
-        <p id="intro">  A passionate <span style="color:crimson;">Front-End Developer</span> with a love for building 
-            interactive and visually stunning web. I enjoy solving complex problems with clean and <b>efficient</b> code.<br> Let's create something amazing!!!</p>
+    <div class="container">
+        <div class="about">
+            <h1 id="animated-name"><span id="hey">-HEY,</span><span id="name">It's Me SWAMY NAIDU</span></h1>
+            <p>
+                A passionate web developer with a keen interest in creating responsive and 
+                interactive applications. Skilled in modern web technologies and always eager 
+                to learn and innovate.
+            </p>
         </div>
+        <div id="img-mine">
+            <img src="C:\Users\swamy\Desktop\Mine\3X5A962021 (1).jpg" alt="My Profile Picture">
+        </div>
+    </div>
     </section>
-    
-    <section id="about" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: black; color: white; text-align: center;">
+    <section id="about">
         <div class="about-container">
             <div class="about-text">
-            <h2 style="font-size: 25px; color: aqua; text-shadow: 2px 2px 5px black;">About Me</h2>
-            <p style="font-size: 15px; line-height: 1.6; color: bisque; text-shadow: 1px 1px 3px black; max-width: 90%;margin:auto;">
+            <h2>About Me</h2>
+            <p >
                 I'm Golakoti Swamy Naidu, a passionate  Web Developer with a strong foundation in programming and web technologies.  
                 Currently pursuing a Diploma in Computer Engineering, I am eager to build innovative and user-friendly applications.
                 I'm a Front-End Developer with a passion for crafting interactive and engaging digital experiences.
                 Currently pursuing a diploma in Computer Engineering, I love creating visually appealing, 
                 user-friendly websites that enhance the web experience.
             </p>
-            <p style="font-size: 15px; line-height: 1.6; color: bisque; text-shadow: 1px 1px 3px black; max-width: 70%; margin: auto;">
+            <p>
                 My expertise includes HTML, CSS, JavaScript, and showcasing my skills in technology and I continuously explore 
                 new technologies to stay ahead in web development. My goal is to create efficient and scalable web solutions.
             </p>
@@ -636,7 +750,7 @@ section {
     <section id="projects">
         <h2>My Projects</h2>
         
-        <!-- Calculator Project -->
+        <div class="project-container">
         <div class="projectmain">
             <div class="project-text">
                 <h3>Smart Calculator</h3>
@@ -645,7 +759,6 @@ section {
             </div>
         </div>
     
-        <!-- Login & Signup Project -->
         <div class="projectmain">
             <div class="project-text">
                 <h3>Login & Signup System</h3>
@@ -653,7 +766,7 @@ section {
                 <a href="https://swamynaidu920.github.io/loginform" target="_blank" class="btn">Click Here!!!</a>
             </div>
         </div>
-    
+    </div>
     </section>
     
     
@@ -666,7 +779,7 @@ section {
             <form id="contact-form">
                 <div class="input-group">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    <input type="text" id="name" name="name" placeholder="USERNAME" required>
                 </div>
     
                 <div class="input-group">
@@ -684,9 +797,10 @@ section {
         </div>
     </section>
     
+</section>
 <script>
     window.onload = function () {
-        window.scrollTo(0, 0); 
+        window.scrollTo(0, 0); // Scrolls to the top when the page refreshes
     };
 </script>
 </body>
